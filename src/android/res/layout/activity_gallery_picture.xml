@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <GridView
+            android:id="@+id/gridview"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent" 
+            android:layout_weight=".85">
+
+   </GridView>
+
+   <ImageView
+       android:id="@+id/imageView1"
+       android:background="@android:color/white"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:layout_weight=".25"
+       android:contentDescription="@string/desc"
+       android:scaleType="centerInside"
+       android:src="@drawable/img_ui_logo" />
+
+   a
+
+  </LinearLayout>

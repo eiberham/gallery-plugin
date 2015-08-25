@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.example.gallerypictureactivity" version="1.0.2-dev">
+    <name>GalleryPlugin</name>
+    <description>Cordova Gallery Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,gallery,phonegap,plugin</keywords>
+    <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git</repo>
+    <issue>https://issues.apache.org/jira/browse/CB/component/12320641</issue>
+
+    <engines>
+        <engine name="cordova" version=">=3.1.0" />
+    </engines>
+
+    <!-- android -->
+
+    <platform name="android">
+
+        <js-module src="www/Gallery.js" name="Gallery">
+            <clobbers target="plugins.viewGallery" />
+        </js-module>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="GalleryPlugin">
+                <param name="android-package" value="com.example.gallerypictureactivity.GalleryPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+
+        <source-file src="src/android/GalleryPictureActivity.java" target-dir="src/com/example/gallerypictureactivity" />
+        <source-file src="src/android/GridViewAdapter.java" target-dir="src/com/example/gallerypictureactivity" />
+        <source-file src="src/android/GalleryPlugin.java" target-dir="src/com/example/gallerypictureactivity" />
+
+        <!--  drawable src/android/resources -->
+
+        <resource-file src="src/android/res/drawable-hdpi/ic_trash.png" target="res/drawable-hdpi/ic_trash.png" />
+        <resource-file src="src/android/res/drawable-hdpi/img_ui_logo.png" target="res/drawable-hdpi/img_ui_logo.png" />
+
+        <resource-file src="src/android/res/drawable-mdpi/ic_trash.png" target="res/drawable-mdpi/ic_trash.png" />
+        <resource-file src="src/android/res/drawable-mdpi/img_ui_logo.png" target="res/drawable-mdpi/img_ui_logo.png" />
+
+        <resource-file src="src/android/res/drawable-xhdpi/ic_trash.png" target="res/drawable-xhdpi/ic_trash.png" />
+        <resource-file src="src/android/res/drawable-xhdpi/img_ui_logo.png" target="res/drawable-xhdpi/img_ui_logo.png" />
+
+        <!-- layout     src/android/resources -->
+
+        <resource-file src="src/android/res/layout/activity_gallery_picture.xml" target="res/layout/activity_gallery_picture.xml" />
+        <resource-file src="src/android/res/layout/gridview_item.xml" target="res/layout/gridview_item.xml" />
+
+    </platform>
+</plugin>
