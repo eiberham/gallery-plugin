@@ -15,7 +15,7 @@
     <platform name="android">
 
         <js-module src="www/Gallery.js" name="Gallery">
-            <clobbers target="plugins.viewGallery" />
+            <clobbers target="viewGallery" />
         </js-module>
 
         <config-file target="res/xml/config.xml" parent="/*">
@@ -27,6 +27,12 @@
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <activity android:name="com.example.gallerypictureactivity.GalleryPictureActivity"
+                      android:exported="true"
+                      android:screenOrientation="landscape"/>
         </config-file>
 
         <source-file src="src/android/GalleryPictureActivity.java" target-dir="src/com/example/gallerypictureactivity" />
