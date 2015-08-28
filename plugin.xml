@@ -7,7 +7,7 @@
     <repo>https://github.com/scripthub/GalleryPlugin.git</repo>
 
     <engines>
-        <engine name="cordova" version=">=3.1.0" />
+        <engine name="cordova" version=">=2.11.2" />
     </engines>
 
     <!-- android -->
