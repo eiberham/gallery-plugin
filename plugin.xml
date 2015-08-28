@@ -55,14 +55,14 @@
 
         <!-- layout     src/android/resources -->
 
-        <resource-file src="src/android/res/layout/activity_gallery_picture.xml" target="res/layout" />
-        <resource-file src="src/android/res/layout/gridview_item.xml" target="res/layout" />
+        <resource-file src="src/android/res/layout/activity_gallery_picture.xml" target="res/layout/activity_gallery_picture.xml" />
+        <resource-file src="src/android/res/layout/gridview_item.xml" target="res/layout/gridview_item.xml" />
 
         <!-- strings    src/android/res/values -->
 
-        <resource-file src="src/android/res/values/strings.xml" target="res/values" />
-        <resource-file src="src/android/res/values/dimens.xml" target="res/values" />
-        <resource-file src="src/android/res/values/styles.xml" target="res/values" />
+        <resource-file src="src/android/res/values/strings.xml" target="res/values/strings.xml" />
+        <resource-file src="src/android/res/values/dimens.xml" target="res/values/dimens.xml" />
+        <resource-file src="src/android/res/values/styles.xml" target="res/values/styles.xml" />
 
     </platform>
 </plugin>
