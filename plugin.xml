@@ -60,9 +60,9 @@
 
         <!-- strings    src/android/res/values -->
 
-        <resource-file src="src/android/res/values/strings.xml" target="res/values/strings.xml" />
-        <resource-file src="src/android/res/values/dimens.xml" target="res/values/dimens.xml" />
-        <resource-file src="src/android/res/values/styles.xml" target="res/values/styles.xml" />
+        <resource-file src="src/android/res/values/strings.xml" target="res/values" />
+        <resource-file src="src/android/res/values/dimens.xml" target="res/values" />
+        <resource-file src="src/android/res/values/styles.xml" target="res/values" />
 
     </platform>
 </plugin>
