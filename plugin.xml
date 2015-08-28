@@ -41,19 +41,25 @@
 
         <!--  drawable src/android/resources -->
 
-        <resource-file src="src/android/res/drawable-hdpi/ic_trash.png" target="res/drawable-hdpi/ic_trash.png" />
-        <resource-file src="src/android/res/drawable-hdpi/img_ui_logo.jpg" target="res/drawable-hdpi/img_ui_logo.jpg" />
+        <resource-file src="src/android/res/drawable-hdpi/ic_trash.png" target="res/drawable-hdpi" />
+        <resource-file src="src/android/res/drawable-hdpi/img_ui_logo.jpg" target="res/drawable-hdpi" />
 
-        <resource-file src="src/android/res/drawable-mdpi/ic_trash.png" target="res/drawable-mdpi/ic_trash.png" />
-        <resource-file src="src/android/res/drawable-mdpi/img_ui_logo.jpg" target="res/drawable-mdpi/img_ui_logo.jpg" />
+        <resource-file src="src/android/res/drawable-mdpi/ic_trash.png" target="res/drawable-mdpi" />
+        <resource-file src="src/android/res/drawable-mdpi/img_ui_logo.jpg" target="res/drawable-mdpi" />
 
-        <resource-file src="src/android/res/drawable-xhdpi/ic_trash.png" target="res/drawable-xhdpi/ic_trash.png" />
-        <resource-file src="src/android/res/drawable-xhdpi/img_ui_logo.jpg" target="res/drawable-xhdpi/img_ui_logo.jpg" />
+        <resource-file src="src/android/res/drawable-xhdpi/ic_trash.png" target="res/drawable-xhdpi" />
+        <resource-file src="src/android/res/drawable-xhdpi/img_ui_logo.jpg" target="res/drawable-xhdpi" />
 
         <!-- layout     src/android/resources -->
 
-        <resource-file src="src/android/res/layout/activity_gallery_picture.xml" target="res/layout/activity_gallery_picture.xml" />
-        <resource-file src="src/android/res/layout/gridview_item.xml" target="res/layout/gridview_item.xml" />
+        <resource-file src="src/android/res/layout/activity_gallery_picture.xml" target="res/layout" />
+        <resource-file src="src/android/res/layout/gridview_item.xml" target="res/layout" />
+
+        <!-- strings    src/android/res/values -->
+
+        <resource-file src="src/android/res/values/strings.xml" target="res/values" />
+        <resource-file src="src/android/res/values/dimens.xml" target="res/values" />
+        <resource-file src="src/android/res/values/styles.xml" target="res/values" />
 
     </platform>
 </plugin>
