@@ -58,11 +58,10 @@
         <resource-file src="src/android/res/layout/activity_gallery_picture.xml" target="res/layout/activity_gallery_picture.xml" />
         <resource-file src="src/android/res/layout/gridview_item.xml" target="res/layout/gridview_item.xml" />
 
-        <!-- strings    src/android/res/values -->
-
-        <!--<resource-file src="src/android/res/values/strings.xml" target="res/values" />
-        <resource-file src="src/android/res/values/dimens.xml" target="res/values" />
-        <resource-file src="src/android/res/values/styles.xml" target="res/values" />-->
+        <!-- plugman cannot merge - prepare manual merge -->
+        <config-file target="res/values/strings.xml" parent="/resources">
+            <string name="desc">Test Description</string>
+        </config-file>
 
     </platform>
 </plugin>
