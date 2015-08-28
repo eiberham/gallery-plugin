@@ -41,17 +41,17 @@
 
         <!--  drawable src/android/resources -->
 
-        <resource-file src="src/android/res/drawable-hdpi/ic_trash.png" target="res/drawable-hdpi" />
-        <resource-file src="src/android/res/drawable-hdpi/img_ui_logo.jpg" target="res/drawable-hdpi" />
-        <resource-file src="src/android/res/drawable-hdpi/ic_launcher.png" target="res/drawable-hdpi" />
+        <resource-file src="src/android/res/drawable-hdpi/ic_trash.png" target="res/drawable-hdpi/ic_trash.png" />
+        <resource-file src="src/android/res/drawable-hdpi/img_ui_logo.jpg" target="res/drawable-hdpi/img_ui_logo.jpg" />
+        <resource-file src="src/android/res/drawable-hdpi/ic_launcher.png" target="res/drawable-hdpi/ic_launcher.png" />
 
-        <resource-file src="src/android/res/drawable-mdpi/ic_trash.png" target="res/drawable-mdpi" />
-        <resource-file src="src/android/res/drawable-mdpi/img_ui_logo.jpg" target="res/drawable-mdpi" />
-        <resource-file src="src/android/res/drawable-mdpi/ic_launcher.png" target="res/drawable-mdpi" />
+        <resource-file src="src/android/res/drawable-mdpi/ic_trash.png" target="res/drawable-mdpi/ic_trash.png" />
+        <resource-file src="src/android/res/drawable-mdpi/img_ui_logo.jpg" target="res/drawable-mdpi/img_ui_logo.jpg" />
+        <resource-file src="src/android/res/drawable-mdpi/ic_launcher.png" target="res/drawable-mdpi/ic_launcher.png" />
 
-        <resource-file src="src/android/res/drawable-xhdpi/ic_trash.png" target="res/drawable-xhdpi" />
-        <resource-file src="src/android/res/drawable-xhdpi/img_ui_logo.jpg" target="res/drawable-xhdpi" />
-        <resource-file src="src/android/res/drawable-xhdpi/ic_launcher.png" target="res/drawable-xhdpi" />
+        <resource-file src="src/android/res/drawable-xhdpi/ic_trash.png" target="res/drawable-xhdpi/ic_trash.png" />
+        <resource-file src="src/android/res/drawable-xhdpi/img_ui_logo.jpg" target="res/drawable-xhdpi/img_ui_logo.jpg" />
+        <resource-file src="src/android/res/drawable-xhdpi/ic_launcher.png" target="res/drawable-xhdpi/ic_launcher.png" />
 
         <!-- layout     src/android/resources -->
 
