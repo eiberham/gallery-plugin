@@ -27,7 +27,8 @@ public class GalleryPictureActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_gallery_picture);
+		//setContentView(R.layout.activity_gallery_picture);
+		setContentView(getResources().getIdentifier("activity_gallery_picture", "layout", getPackageName()));
 		
 		Bundle extras = getIntent().getExtras();
         String path = extras.getString("folderPath");
@@ -56,11 +57,13 @@ public class GalleryPictureActivity extends Activity {
             }
             
         }
-        grid = (GridView)findViewById(R.id.gridview);
+        //grid = (GridView)findViewById(R.id.gridview);
+        grid = (GridView)findViewById(getResources().getIdentifier("gridview", "id", getPackageName()));
         adapter = new GridViewAdapter(this, filepath);
         grid.setAdapter(adapter);
         
-        imageview = (ImageView)findViewById(R.id.imageView1);
+        //imageview = (ImageView)findViewById(R.id.imageView1);
+        imageview = (ImageView)findViewById(getResources().getIdentifier("imageView1", "id", getPackageName()));
         imageview.setOnLongClickListener(new View.OnLongClickListener() {
 			
 			@Override
@@ -69,7 +72,7 @@ public class GalleryPictureActivity extends Activity {
 				new AlertDialog.Builder(GalleryPictureActivity.this)
 			    .setTitle("Eliminar foto")
 			    .setMessage("¿Desea eliminar esta foto?")
-			    .setIcon(R.drawable.ic_trash)
+			    .setIcon(getResources().getIdentifier("ic_trash", "drawable", getPackageName()))
 			    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
 			        public void onClick(DialogInterface dialog, int which) { 
 			            // continue with delete

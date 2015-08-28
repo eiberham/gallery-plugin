@@ -48,11 +48,13 @@ public class GridViewAdapter extends BaseAdapter{
     {
     	ViewHolder viewholder;
     	
+        /*if (convertView == null)
+            convertView = inflater.inflate(R.layout.gridview_item, null);*/
         if (convertView == null)
-            convertView = inflater.inflate(R.layout.gridview_item, null);
+            convertView = inflater.inflate(activity.getResources().getIdentifier("gridview_item", "layout", activity.getPackageName()), null);
         
         viewholder = new ViewHolder();
-		viewholder.imagen = (ImageView)convertView.findViewById(R.id.image);
+		viewholder.imagen = (ImageView)convertView.findViewById(activity.getResources().getIdentifier("image", "id", activity.getPackageName()));
 				
         int targetWidth = 100;
         int targetHeight = 100;
