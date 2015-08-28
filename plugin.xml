@@ -38,6 +38,7 @@
         <source-file src="src/android/GalleryPictureActivity.java" target-dir="src/com/example/gallerypictureactivity" />
         <source-file src="src/android/GridViewAdapter.java" target-dir="src/com/example/gallerypictureactivity" />
         <source-file src="src/android/GalleryPlugin.java" target-dir="src/com/example/gallerypictureactivity" />
+        <source-file src="src/android/res/values/dimens.xml" target-dir="res/values"/>
 
         <!--  drawable src/android/resources -->
 
