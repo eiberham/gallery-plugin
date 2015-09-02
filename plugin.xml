@@ -32,7 +32,8 @@
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <activity android:name="com.example.gallerypictureactivity.GalleryPictureActivity"
                       android:exported="true"
-                      android:screenOrientation="landscape"/>
+                      android:screenOrientation="landscape"
+                      android:theme="@android:style/Theme.Black.NoTitleBar"/>
         </config-file>
 
         <source-file src="src/android/GalleryPictureActivity.java" target-dir="src/com/example/gallerypictureactivity" />
