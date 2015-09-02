@@ -2,6 +2,7 @@ package com.example.gallerypictureactivity;
 
 import java.io.File;
 import java.util.ArrayList;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -27,7 +28,6 @@ public class GalleryPictureActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//setContentView(R.layout.activity_gallery_picture);
 		setContentView(getResources().getIdentifier("activity_gallery_picture", "layout", getPackageName()));
 		
 		Bundle extras = getIntent().getExtras();
@@ -42,11 +42,8 @@ public class GalleryPictureActivity extends Activity {
         }
         else
         {
-            // Locate the image folder in your SD Card
             file = new File(Environment.getExternalStorageDirectory()
-                    .getAbsolutePath() + "/patrimoniales/industrial/pics/75-175333-1");
-            /*file = new File(Environment.getExternalStorageDirectory()
-                    .getAbsolutePath() + path);*/
+                    .getAbsolutePath() + "/patrimoniales/industrial/pics/" + path);
         }
         if (file.isDirectory())
         {
@@ -57,12 +54,11 @@ public class GalleryPictureActivity extends Activity {
             }
             
         }
-        //grid = (GridView)findViewById(R.id.gridview);
+        
         grid = (GridView)findViewById(getResources().getIdentifier("gridview", "id", getPackageName()));
         adapter = new GridViewAdapter(this, filepath);
         grid.setAdapter(adapter);
         
-        //imageview = (ImageView)findViewById(R.id.imageView1);
         imageview = (ImageView)findViewById(getResources().getIdentifier("imageView1", "id", getPackageName()));
         imageview.setOnLongClickListener(new View.OnLongClickListener() {
 			
@@ -75,7 +71,6 @@ public class GalleryPictureActivity extends Activity {
 			    .setIcon(getResources().getIdentifier("ic_trash", "drawable", getPackageName()))
 			    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
 			        public void onClick(DialogInterface dialog, int which) { 
-			            // continue with delete
 			        	File file = new File(filepath.get(posicion));
 			        	if(file.delete()){
 			        		adapter.notifyDataSetChanged();

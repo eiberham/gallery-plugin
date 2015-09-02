@@ -48,8 +48,6 @@ public class GridViewAdapter extends BaseAdapter{
     {
     	ViewHolder viewholder;
     	
-        /*if (convertView == null)
-            convertView = inflater.inflate(R.layout.gridview_item, null);*/
         if (convertView == null)
             convertView = inflater.inflate(activity.getResources().getIdentifier("gridview_item", "layout", activity.getPackageName()), null);
         

@@ -15,6 +15,13 @@ public class GalleryPlugin extends CordovaPlugin{
 	public String								folderPath;
 	private static final String VIEW_GALLERY = 	"viewGallery";
 	
+	/**
+	 * Constructor.
+	 */
+	public GalleryPlugin() {
+
+	}
+	
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		this.callbackContext = callbackContext;
 		this.folderPath = args.getString(0);
