@@ -14,8 +14,8 @@
 
     <platform name="android">
 
-        <js-module src="www/Gallery.js" name="Gallery">
-            <clobbers target="viewGallery" />
+        <js-module src="www/Gallery.js" name="GalleryPlugin">
+            <clobbers target="GalleryPlugin" />
         </js-module>
 
         <config-file target="res/xml/config.xml" parent="/*">
