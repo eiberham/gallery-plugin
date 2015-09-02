@@ -2,16 +2,20 @@
  * Author: Abraham.
  *
  */
+var exec = require('cordova/exec');
 
-module.exports = {
-
+var GalleryPlugin =
+{
     /**
      * Open a native built in image gallery activity in a given folder
      *
      * @param {String} folderPath           Path to the target folder
      */
-    viewGallery: function (folderPath) {
+    viewGallery : function( folderPath )
+    {
         var _folder = folderPath;
-        return cordova.exec(null, null, "GalleryPlugin", "viewGallery", [_folder]);
+        return exec(null, null, "GalleryPlugin", "viewGallery", [_folder]);
     }
 }
+
+module.exports = GalleryPlugin;
