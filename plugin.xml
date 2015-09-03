@@ -33,7 +33,8 @@
             <activity android:name="com.example.gallerypictureactivity.GalleryPictureActivity"
                       android:exported="true"
                       android:screenOrientation="landscape"
-                      android:theme="@android:style/Theme.Black.NoTitleBar"/>
+                      android:theme="android:Theme.AppCompat.Light.NoActionBar"/>
+            <!-- android:theme="@android:style/Theme.Black.NoTitleBar" -->
         </config-file>
 
         <source-file src="src/android/GalleryPictureActivity.java" target-dir="src/com/example/gallerypictureactivity" />
