@@ -34,31 +34,24 @@ public class GalleryPictureActivity extends Activity {
 		Bundle extras = getIntent().getExtras();
         String path = extras.getString("folderPath");
         
-		// Check for SD Card
-        if (!Environment.getExternalStorageState().equals(
-                Environment.MEDIA_MOUNTED))
-        {
-            Toast.makeText(this, "Error! No SDCARD Found!",
-                    Toast.LENGTH_LONG).show();
-        }
-        else
-        {
-            file = new File(Environment.getExternalStorageDirectory()
+        if(! path.isEmpty()){
+        	file = new File(Environment.getExternalStorageDirectory()
                     .getAbsolutePath() + "/patrimoniales/industrial/pics/" + path);
-        }
-        if (file.isDirectory())
-        {
-            filepath = new ArrayList<String>();
-            
-            for(File img : file.listFiles()){
-            	filepath.add(img.getAbsolutePath());
+        	if (file.isDirectory())
+            {
+                filepath = new ArrayList<String>();
+                
+                for(File img : file.listFiles()){
+                	filepath.add(img.getAbsolutePath());
+                }
+                
             }
             
+            grid = (GridView)findViewById(getResources().getIdentifier("gridview", "id", getPackageName()));
+            adapter = new GridViewAdapter(this, filepath);
+            grid.setAdapter(adapter);
         }
         
-        grid = (GridView)findViewById(getResources().getIdentifier("gridview", "id", getPackageName()));
-        adapter = new GridViewAdapter(this, filepath);
-        grid.setAdapter(adapter);
         
         imageview = (ImageView)findViewById(getResources().getIdentifier("imageView1", "id", getPackageName()));
         imageview.setOnLongClickListener(new View.OnLongClickListener() {
@@ -66,43 +59,45 @@ public class GalleryPictureActivity extends Activity {
 			@Override
 			public boolean onLongClick(View v) {
 				// TODO Auto-generated method stub
-				new AlertDialog.Builder(GalleryPictureActivity.this)
-			    .setTitle("Eliminar foto")
-			    .setMessage("¿Desea eliminar esta foto?")
-			    .setIcon(getResources().getIdentifier("ic_trash", "drawable", getPackageName()))
-			    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
-			        public void onClick(DialogInterface dialog, int which) { 
-			        	File file = new File(filepath.get(posicion));
-			        	if(file.delete()){
-			        		adapter.notifyDataSetChanged();			        		
-			        		filepath.remove(posicion);
-			        		if(posicion + 1 > filepath.size()){  
-			        			if(filepath.size() < 1){
-			        				Drawable resource = getResources().getDrawable(getResources().getIdentifier("img_ui_logo", "drawable", getPackageName()));
-			        				imageview.setImageDrawable(resource);
-			        				if(imageview.getScaleType() != ImageView.ScaleType.CENTER_INSIDE)
-				        				imageview.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-			        				return;
-			        			}
-			        			bmp = fetchConfiguredImage(filepath.get(0));
-			        			posicion = 0;
-			        			imageview.setImageBitmap(bmp);
-			        			if(imageview.getScaleType() != ImageView.ScaleType.FIT_XY)
-			        				imageview.setScaleType(ImageView.ScaleType.FIT_XY);
-			        		}else{
-			        			bmp = fetchConfiguredImage(filepath.get(posicion));
-			        			imageview.setImageBitmap(bmp);
-			        			if(imageview.getScaleType() != ImageView.ScaleType.FIT_XY)
-			        				imageview.setScaleType(ImageView.ScaleType.FIT_XY);
-			        		}
-			        	}
-			        }
-			     })
-			    .setNegativeButton("No", new DialogInterface.OnClickListener() {
-			        public void onClick(DialogInterface dialog, int which) { 
-			            // do nothing
-			        }
-			     }).show();
+				if(filepath.size() > 0){
+					new AlertDialog.Builder(GalleryPictureActivity.this)
+				    .setTitle("Eliminar foto")
+				    .setMessage("¿Desea eliminar esta foto?")
+				    .setIcon(getResources().getIdentifier("ic_trash", "drawable", getPackageName()))
+				    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+				        public void onClick(DialogInterface dialog, int which) { 
+				        	File file = new File(filepath.get(posicion));
+				        	if(file.delete()){
+				        		adapter.notifyDataSetChanged();			        		
+				        		filepath.remove(posicion);
+				        		if(posicion + 1 > filepath.size()){  
+				        			if(filepath.size() < 1){
+				        				Drawable resource = getResources().getDrawable(getResources().getIdentifier("img_ui_logo", "drawable", getPackageName()));
+				        				imageview.setImageDrawable(resource);
+				        				if(imageview.getScaleType() != ImageView.ScaleType.CENTER_INSIDE)
+					        				imageview.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+				        				return;
+				        			}
+				        			bmp = fetchConfiguredImage(filepath.get(0));
+				        			posicion = 0;
+				        			imageview.setImageBitmap(bmp);
+				        			if(imageview.getScaleType() != ImageView.ScaleType.FIT_XY)
+				        				imageview.setScaleType(ImageView.ScaleType.FIT_XY);
+				        		}else{
+				        			bmp = fetchConfiguredImage(filepath.get(posicion));
+				        			imageview.setImageBitmap(bmp);
+				        			if(imageview.getScaleType() != ImageView.ScaleType.FIT_XY)
+				        				imageview.setScaleType(ImageView.ScaleType.FIT_XY);
+				        		}
+				        	}
+				        }
+				     })
+				    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+				        public void onClick(DialogInterface dialog, int which) { 
+				            // do nothing
+				        }
+				     }).show();
+				}
 				return false;
 			}
 		});
