@@ -73,10 +73,18 @@ public class GalleryPictureActivity extends Activity {
 			        public void onClick(DialogInterface dialog, int which) { 
 			        	File file = new File(filepath.get(posicion));
 			        	if(file.delete()){
-			        		adapter.notifyDataSetChanged();
+			        		adapter.notifyDataSetChanged();			        		
 			        		filepath.remove(posicion);
-			        		if(posicion + 1 > filepath.size()){
+			        		if(posicion + 1 > filepath.size()){  
+			        			if(filepath.size() < 1){
+			        				Drawable resource = getResources().getDrawable(getResources().getIdentifier("img_ui_logo", "drawable", getPackageName()));
+			        				imageview.setImageDrawable(resource);
+			        				if(imageview.getScaleType() != ImageView.ScaleType.CENTER_INSIDE)
+				        				imageview.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+			        				return;
+			        			}
 			        			bmp = fetchConfiguredImage(filepath.get(0));
+			        			posicion = 0;
 			        			imageview.setImageBitmap(bmp);
 			        			if(imageview.getScaleType() != ImageView.ScaleType.FIT_XY)
 			        				imageview.setScaleType(ImageView.ScaleType.FIT_XY);
