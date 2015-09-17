@@ -17,7 +17,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 public class GalleryPictureActivity extends Activity {
-	private ArrayList<String>   filepath;
+	private ArrayList<String>   filepath = new ArrayList<String>();
     GridView                	grid;
     GridViewAdapter         	adapter;
     File                    	file;
@@ -38,9 +38,7 @@ public class GalleryPictureActivity extends Activity {
                     .getAbsolutePath() + "/patrimoniales/industrial/pics/" + path);
         	if(file.exists()){
         		if (file.isDirectory())
-                {
-                    filepath = new ArrayList<String>();
-                    
+                {   
                     for(File img : file.listFiles()){
                     	filepath.add(img.getAbsolutePath());
                     }
@@ -70,6 +68,14 @@ public class GalleryPictureActivity extends Activity {
         
         
         imageview = (ImageView)findViewById(getResources().getIdentifier("imageView1", "id", getPackageName()));
+        
+        if(filepath.size() > 0){
+        	bmp = fetchConfiguredImage(filepath.get(0));
+            imageview.setImageBitmap(bmp);
+            if(imageview.getScaleType() != ImageView.ScaleType.FIT_XY) imageview.setScaleType(ImageView.ScaleType.FIT_XY);
+            bmp = null;
+        }
+        
         imageview.setOnLongClickListener(new View.OnLongClickListener() {
 			
 			@Override
