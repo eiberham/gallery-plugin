@@ -37,19 +37,36 @@ public class GalleryPictureActivity extends Activity {
         if(! path.isEmpty()){
         	file = new File(Environment.getExternalStorageDirectory()
                     .getAbsolutePath() + "/patrimoniales/industrial/pics/" + path);
-        	if (file.isDirectory())
-            {
-                filepath = new ArrayList<String>();
-                
-                for(File img : file.listFiles()){
-                	filepath.add(img.getAbsolutePath());
+        	if(file.exists()){
+        		if (file.isDirectory())
+                {
+                    filepath = new ArrayList<String>();
+                    
+                    for(File img : file.listFiles()){
+                    	filepath.add(img.getAbsolutePath());
+                    }
+                    
                 }
                 
-            }
-            
-            grid = (GridView)findViewById(getResources().getIdentifier("gridview", "id", getPackageName()));
-            adapter = new GridViewAdapter(this, filepath);
-            grid.setAdapter(adapter);
+                grid = (GridView)findViewById(getResources().getIdentifier("gridview", "id", getPackageName()));
+                adapter = new GridViewAdapter(this, filepath);
+                grid.setAdapter(adapter);
+                
+                grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick (AdapterView<?> parent, View view,
+                            int position, long id)
+                    {
+                    	posicion = position;
+                    	bmp = fetchConfiguredImage(filepath.get(position));
+                        imageview.setImageBitmap(bmp);
+                        if(imageview.getScaleType() != ImageView.ScaleType.FIT_XY)
+            				imageview.setScaleType(ImageView.ScaleType.FIT_XY);
+                        bmp = null;
+                       
+                    }
+                });
+        	}
         }
         
         
@@ -102,20 +119,6 @@ public class GalleryPictureActivity extends Activity {
 			}
 		});
 
-        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick (AdapterView<?> parent, View view,
-                    int position, long id)
-            {
-            	posicion = position;
-            	bmp = fetchConfiguredImage(filepath.get(position));
-                imageview.setImageBitmap(bmp);
-                if(imageview.getScaleType() != ImageView.ScaleType.FIT_XY)
-    				imageview.setScaleType(ImageView.ScaleType.FIT_XY);
-                bmp = null;
-               
-            }
-        });
 	}
 	
 	Bitmap fetchConfiguredImage(String filePath){
