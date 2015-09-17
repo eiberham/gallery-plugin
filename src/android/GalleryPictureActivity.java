@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class GalleryPictureActivity extends Activity {
 	private ArrayList<String>   filepath;
