@@ -2,7 +2,6 @@ package com.example.gallerypictureactivity;
 
 import java.io.File;
 import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -14,6 +13,7 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class GalleryPictureActivity extends Activity {
@@ -23,6 +23,7 @@ public class GalleryPictureActivity extends Activity {
     File                    	file;
     public static Bitmap    	bmp = null;
     ImageView               	imageview;
+    ImageButton					imagebutton;
     public int					posicion;
 
 	@Override
@@ -76,15 +77,16 @@ public class GalleryPictureActivity extends Activity {
             bmp = null;
         }
         
-        imageview.setOnLongClickListener(new View.OnLongClickListener() {
+        imagebutton = (ImageButton)findViewById(getResources().getIdentifier("imageButton1", "id", getPackageName()));
+        imagebutton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
-			public boolean onLongClick(View v) {
+			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				if(filepath.size() > 0){
 					new AlertDialog.Builder(GalleryPictureActivity.this)
-				    .setTitle("Eliminar foto")
-				    .setMessage("¿Desea eliminar esta foto?")
+				    .setTitle("Eliminar fotografía")
+				    .setMessage("¿Desea eliminar esta fotografía?")
 				    .setIcon(getResources().getIdentifier("ic_trash", "drawable", getPackageName()))
 				    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
 				        public void onClick(DialogInterface dialog, int which) { 
@@ -120,7 +122,6 @@ public class GalleryPictureActivity extends Activity {
 				        }
 				     }).show();
 				}
-				return false;
 			}
 		});
 

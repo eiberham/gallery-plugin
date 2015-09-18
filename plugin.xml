@@ -46,14 +46,17 @@
         <resource-file src="src/android/res/drawable-hdpi/ic_trash.png" target="res/drawable-hdpi/ic_trash.png" />
         <resource-file src="src/android/res/drawable-hdpi/img_ui_logo.jpg" target="res/drawable-hdpi/img_ui_logo.jpg" />
         <resource-file src="src/android/res/drawable-hdpi/ic_launcher.png" target="res/drawable-hdpi/ic_launcher.png" />
+        <resource-file src="src/android/res/drawable-hdpi/ic_delete.png" target="res/drawable-hdpi/ic_delete.png" />
 
         <resource-file src="src/android/res/drawable-mdpi/ic_trash.png" target="res/drawable-mdpi/ic_trash.png" />
         <resource-file src="src/android/res/drawable-mdpi/img_ui_logo.jpg" target="res/drawable-mdpi/img_ui_logo.jpg" />
         <resource-file src="src/android/res/drawable-mdpi/ic_launcher.png" target="res/drawable-mdpi/ic_launcher.png" />
+        <resource-file src="src/android/res/drawable-mdpi/ic_delete.png" target="res/drawable-mdpi/ic_delete.png" />
 
         <resource-file src="src/android/res/drawable-xhdpi/ic_trash.png" target="res/drawable-xhdpi/ic_trash.png" />
         <resource-file src="src/android/res/drawable-xhdpi/img_ui_logo.jpg" target="res/drawable-xhdpi/img_ui_logo.jpg" />
         <resource-file src="src/android/res/drawable-xhdpi/ic_launcher.png" target="res/drawable-xhdpi/ic_launcher.png" />
+        <resource-file src="src/android/res/drawable-xhdpi/ic_delete.png" target="res/drawable-xhdpi/ic_delete.png" />
 
         <!-- layout     src/android/resources -->
 
