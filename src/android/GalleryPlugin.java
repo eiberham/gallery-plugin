@@ -13,6 +13,7 @@ public class GalleryPlugin extends CordovaPlugin{
 	
 	public CallbackContext  					callbackContext;
 	public String								folderPath;
+	public String								requestTypePath;
 	private static final String VIEW_GALLERY = 	"viewGallery";
 	
 	/**
@@ -25,10 +26,12 @@ public class GalleryPlugin extends CordovaPlugin{
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		this.callbackContext = callbackContext;
 		this.folderPath = args.getString(0);
+		this.requestTypePath = args.getString(1);
 		
 		if(action.equals(VIEW_GALLERY)){
 			Intent intent = new Intent(this.cordova.getActivity(), GalleryPictureActivity.class);
 			intent.putExtra("folderPath", this.folderPath);
+			intent.putExtra("requestTypePath", this.requestTypePath);
 			
 			if(this.cordova != null)
 	    		this.cordova.startActivityForResult((CordovaPlugin) this, intent, 1);

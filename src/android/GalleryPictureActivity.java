@@ -33,10 +33,11 @@ public class GalleryPictureActivity extends Activity {
 		
 		Bundle extras = getIntent().getExtras();
         String path = extras.getString("folderPath");
+        String requestTypePath = extras.getString("requestTypePath");
         
         if(! path.isEmpty()){
         	file = new File(Environment.getExternalStorageDirectory()
-                    .getAbsolutePath() + "/patrimoniales/industrial/pics/" + path);
+                    .getAbsolutePath() + requestTypePath + path); // "/patrimoniales/industrial/pics/"
         	if(file.exists()){
         		if (file.isDirectory())
                 {   

@@ -29,10 +29,11 @@ var GalleryPlugin =
      * @param {String} folderPath           Path to the target folder ignoring the root path storage/emulated/0
      * sample path : /folder/subfolder/subfolder/
      */
-    viewGallery : function( folderPath )
+    viewGallery : function( folderPath, requestTypePath )
     {
         var _folder = folderPath;
-        return exec(null, null, "GalleryPlugin", "viewGallery", [_folder]);
+        var typePath = requestTypePath; // "/patrimoniales/industrial/pics/"
+        return exec(null, null, "GalleryPlugin", "viewGallery", [_folder, typePath]);
     }
 }
 
